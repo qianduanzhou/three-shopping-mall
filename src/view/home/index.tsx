@@ -1,5 +1,5 @@
 import { Component } from 'react';
-
+import { Outlet } from "react-router-dom";
 class Home extends Component<any, any> {
     constructor(props: any) {
         super(props);
@@ -11,6 +11,7 @@ class Home extends Component<any, any> {
         return (
             <div className="home">
                 {this.state.title}
+                <Outlet/>
             </div>
         )
     }
