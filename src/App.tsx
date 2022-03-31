@@ -1,7 +1,7 @@
-import './static/css/App.scss';
+import 'static/css/App.scss';
 import { Routes, Route } from "react-router-dom";
-import Home from './view/home';
-import List from './view/list';
+import Home from 'view/home';
+import List from 'view/list';
 
 function App() {
   return (

@@ -84,7 +84,9 @@ const hasJsxRuntime = (() => {
     return false;
   }
 })();
-
+function resolvePath(filePath) {
+  return path.resolve(__dirname, filePath);
+}
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
 module.exports = function (webpackEnv) {
@@ -311,6 +313,11 @@ module.exports = function (webpackEnv) {
         // Support React Native Web
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
         'react-native': 'react-native-web',
+        '@': resolvePath('../src'), // @ 代表 src 路径
+        'view': resolvePath('../src/view'),
+        'components': resolvePath('../src/components'),
+        'utils': resolvePath('../src/utils'),
+        'static': resolvePath('../src/static'),
         // Allows for better profiling with ReactDevTools
         ...(isEnvProductionProfile && {
           'react-dom$': 'react-dom/profiling',
