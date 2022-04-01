@@ -1,9 +1,10 @@
 import 'static/css/App.scss';
 // import { Component } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, NavLink  } from "react-router-dom";
 import { Button } from "antd";
 import Home from 'view/home';
 import List from 'view/home/view/list';
+import Counter from 'view/counter';
 import Detail from 'view/home/view/detail';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             } />
             <Route path=":id" element={<Detail />} />
           </Route>
+          <Route path="counter" element={<Counter />} />
         </Route>
         <Route
           path="*"
@@ -36,6 +38,7 @@ function App() {
         />
       </Routes>
       <Button type="primary" onClick={jumpDetail}>跳转</Button>
+      <NavLink to="/detail/111?type=222" state={{key: 333}}>跳转</NavLink>
     </div>
   );
 }

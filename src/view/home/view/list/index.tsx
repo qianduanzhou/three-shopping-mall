@@ -1,6 +1,8 @@
 function List() {
     return (
-        <div className="list">List</div>
+        <div className="list">
+            
+        </div>
     )
 }
 export default List;
