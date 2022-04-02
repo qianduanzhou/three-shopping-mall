@@ -26,6 +26,8 @@ export default function Swiper() {
 				{imgList.map(v => {
 					return <div className={styles.swiperItem} key={v.id}>
 						<Image
+							width="100%"
+							height={400}
 							preview={{ visible: false }}
 							src={v.src}
 						/>
