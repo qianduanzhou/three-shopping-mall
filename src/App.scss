@@ -1,10 +1,12 @@
 @import '~antd/dist/antd.css';
-@import 'reset.css';
-@import 'normalize.css';
+@import 'static/css/reset.css';
+@import 'static/css/normalize.css';
+
 .App {
   text-align: center;
   width: 100%;
   height: 100%;
+
   .test {
     color: red;
   }

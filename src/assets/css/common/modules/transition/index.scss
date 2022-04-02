@@ -1,0 +1,11 @@
+/**
+* vue过渡动画
+*/
+
+//渐隐渐显
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}

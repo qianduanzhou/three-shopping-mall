@@ -26,6 +26,7 @@
       "components/*": ["src/components/*"],
       "static/*": ["src/static/*"],
       "utils/*": ["src/utils/*"],
+      "assets/*": ["src/assets/*"],
     }
   },
   "include": [

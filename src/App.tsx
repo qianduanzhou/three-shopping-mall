@@ -1,6 +1,6 @@
-import 'static/css/App.scss';
+import './App.scss';
 // import { Component } from "react";
-import { Routes, Route, useNavigate, NavLink  } from "react-router-dom";
+import { Routes, Route, useNavigate, NavLink } from 'react-router-dom';
 import { Button } from "antd";
 import Home from 'view/home';
 import List from 'view/home/view/list';
@@ -8,39 +8,39 @@ import Counter from 'view/counter';
 import Detail from 'view/home/view/detail';
 
 function App() {
-  // let navigate = useNavigate();
+	// let navigate = useNavigate();
 
-  // function jumpDetail() {
-  //   navigate(`/detail/55?type=1`, {state: {key: 1}});
-  // }
-  return (
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<Home />} >
-          <Route path="list" element={<List />} />
-          <Route path="detail">
-            <Route index element={
-              <main style={{ padding: "1rem" }}>
-                <p>没有找到商品！</p>
-              </main>
-            } />
-            <Route path=":id" element={<Detail />} />
-          </Route>
-          <Route path="counter" element={<Counter />} />
-        </Route>
-        <Route
-          path="*"
-          element={
-            <main style={{ padding: "1rem" }}>
-              <p>没有相关页面!</p>
-            </main>
-          }
-        />
-      </Routes>
-      {/* <Button type="primary" onClick={jumpDetail}>跳转</Button>
+	// function jumpDetail() {
+	//   navigate(`/detail/55?type=1`, {state: {key: 1}});
+	// }
+	return (
+		<div className="App">
+			<Routes>
+				<Route path="/" element={<Home />} >
+					<Route path="list" element={<List />} />
+					<Route path="detail">
+						<Route index element={
+							<main style={{ padding: "1rem" }}>
+								<p>没有找到商品！</p>
+							</main>
+						} />
+						<Route path=":id" element={<Detail />} />
+					</Route>
+					<Route path="counter" element={<Counter />} />
+				</Route>
+				<Route
+					path="*"
+					element={
+						<main style={{ padding: "1rem" }}>
+							<p>没有相关页面!</p>
+						</main>
+					}
+				/>
+			</Routes>
+			{/* <Button type="primary" onClick={jumpDetail}>跳转</Button>
       <NavLink to="/detail/111?type=222" state={{key: 333}}>跳转</NavLink> */}
-    </div>
-  );
+		</div>
+	);
 }
 
 export default App;

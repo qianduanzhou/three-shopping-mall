@@ -1,0 +1,100 @@
+@import './modules/index.scss';
+
+.commonInput {//公共的input样式
+    .el-input__inner {
+        background: $normalBgColor;
+        border: $normalBorder;
+        color: $inputTextColor;
+        &::placeholder {
+            color: $placeholderTextColor;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
+    .el-input__suffix {
+        .el-input__icon {
+            font-size: 20px;
+            color: $placeholderTextColor;
+        }
+    }
+}
+
+.commonTable {//公共表格
+    background: #142B4F;
+    &.el-table {
+        &::before {
+            height: 0;
+        }
+        .el-table__header-wrapper {
+            tr {
+                height: 40px;
+                th {
+                    background: #142B4F;
+                    border-bottom: none;
+                    .cell {
+                        color: $normalTextColor;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+        .el-table__body-wrapper {
+            .el-table__row, .el-table__row--striped {
+                height: 40px;
+                background: $normalBgColor;
+                color: $normalTextColor;
+                td {
+                    border-bottom: none;
+                    .cell {
+                        font-size: 15px;
+                    }
+                }
+        
+            }
+            .el-table__row--striped{
+                background: $ListItemBg;
+                td {
+                    background: $ListItemBg;
+                }
+            }
+            border-bottom: none;
+        }
+    }
+}
+
+//公用datetimerange样式
+.commonDatetimerange {
+    background: $normalBgColor;
+    color: $inputTextColor;
+    border: none;
+    .el-icon-time {
+        display: none;
+    }
+    .el-range-separator {
+        color: $inputTextColor;
+    }
+    .el-range-input {
+        background: $normalBgColor;
+        color: $inputTextColor;
+    }
+    .el-range__close-icon {
+        color: $inputTextColor;
+    }
+}
+
+//公用select样式
+.commonSelect {
+    background: $normalBgColor;
+    border: none;
+    .el-input__inner {
+        border: none;
+        background: $normalBgColor;
+        color: $inputTextColor;
+        text-align: right;
+    }
+    .el-input__suffix {
+        .el-select__caret {
+            color: $inputTextColor;
+        }
+    }
+}
