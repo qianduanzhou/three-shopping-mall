@@ -1,8 +1,10 @@
-import { Component } from 'react';
+import { Component } from "react";
 import { Outlet } from "react-router-dom";
-import style from './index.module.scss';
+import styles from "./index.module.scss";
 import TopNav from "components/topNav";
-import { Layout } from 'antd';
+import Swiper from "components/swiper";
+
+import { Layout } from "antd";
 const { Header, Footer, Content } = Layout;
 class Home extends Component<any, any> {
     constructor(props: any) {
@@ -13,13 +15,15 @@ class Home extends Component<any, any> {
     }
     render() {
         return (
-            <div className={style.home}>
-                <Layout className={style.layout}>
-                    <Header className={style.header}>
+            <div className={styles.home}>
+                <Layout className={styles.layout}>
+                    <Header className={styles.header}>
                         <TopNav />
                     </Header>
-                    <Content className={style.content}>Content</Content>
-                    <Footer className={style.footer}>Footer</Footer>
+                    <Content className={styles.content}>
+                        <Swiper/>
+                    </Content>
+                    <Footer className={styles.footer}>Footer</Footer>
                 </Layout>
                 <Outlet/>
             </div>

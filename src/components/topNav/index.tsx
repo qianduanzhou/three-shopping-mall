@@ -3,16 +3,16 @@ import styles from "./index.module.scss";
 import classNames from "classnames/bind";
 let cx = classNames.bind(styles);
 interface Nav {
-    left: NavItem[],
-    right: NavItem[],
+    left: NavItem[]
+    right: NavItem[]
     activedId: number
 }
 interface NavItem {
-    id: number,
+    id: number
     text: string
 }
 export default function TopNav() {
-    let nav: Nav = {//导航栏对象
+    let [navObj, setNavObj] = useState<Nav>({//导航栏对象
         left: [{//左侧
             id: 0,
             text: "首页"
@@ -28,8 +28,7 @@ export default function TopNav() {
             text: "我的"
         }],
         activedId: 0,//当前导航栏
-    }
-    let [navObj, setNavObj] = useState(nav);
+    });
     function getNavClass(id: number) {//获取导航栏类
         return cx({
             [styles.nav]: true,
