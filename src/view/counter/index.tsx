@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Button } from 'antd';
 import {
@@ -12,7 +11,6 @@ import {
 export default function Counter() {
   const count = useSelector(selectCount)//useSelector传入selector可以获取state对应的值
   const dispatch = useDispatch()//dispatch传入action可以触发对应的reducer
-  const [incrementAmount, setIncrementAmount] = useState('2')
 
   return (
     <div>

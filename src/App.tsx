@@ -8,11 +8,11 @@ import Counter from 'view/counter';
 import Detail from 'view/home/view/detail';
 
 function App() {
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
 
-  function jumpDetail() {
-    navigate(`/detail/55?type=1`, {state: {key: 1}});
-  }
+  // function jumpDetail() {
+  //   navigate(`/detail/55?type=1`, {state: {key: 1}});
+  // }
   return (
     <div className="App">
       <Routes>
@@ -37,8 +37,8 @@ function App() {
           }
         />
       </Routes>
-      <Button type="primary" onClick={jumpDetail}>跳转</Button>
-      <NavLink to="/detail/111?type=222" state={{key: 333}}>跳转</NavLink>
+      {/* <Button type="primary" onClick={jumpDetail}>跳转</Button>
+      <NavLink to="/detail/111?type=222" state={{key: 333}}>跳转</NavLink> */}
     </div>
   );
 }
