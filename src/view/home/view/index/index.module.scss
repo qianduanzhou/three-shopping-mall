@@ -1,0 +1,12 @@
+.index {
+	@import 'assets/css/common/index.scss';
+  @include flex-column-levelCenter;
+  height: 100%;
+  .shopContainer {
+    margin: 20px 0;
+    height: calc(100% - 40px - 20px - 20px - 20px - 2px);
+    padding: 0 300px;
+    width: 100%;
+    overflow: auto;
+  }
+}

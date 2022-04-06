@@ -16,15 +16,7 @@
 		}
 
 		.content {
-			@include flex-column-levelCenter;
 
-			.shopContainer {
-				margin: 20px 0;
-				height: calc(100% - 40px - 20px - 20px - 20px - 2px);
-				padding: 0 300px;
-				width: 100%;
-				overflow: auto;
-			}
 		}
 
 		.footer {

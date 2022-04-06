@@ -3,6 +3,7 @@ import './App.scss';
 import { Routes, Route, useNavigate, NavLink } from 'react-router-dom';
 import { Button } from "antd";
 import Home from 'view/home';
+import Index from 'view/home/view/index';
 import List from 'view/home/view/list';
 import Counter from 'view/counter';
 import Detail from 'view/home/view/detail';
@@ -17,6 +18,7 @@ function App() {
 		<div className="App">
 			<Routes>
 				<Route path="/" element={<Home />} >
+					<Route path="" element={<Index />} />
 					<Route path="list" element={<List />} />
 					<Route path="detail">
 						<Route index element={

@@ -1,13 +1,18 @@
 import { useState } from 'react';
 import styles from './index.module.scss';
+import { useNavigate } from 'react-router';
 import { Image } from 'antd';
 interface List {
 	id: number
 	name: string | number
 	src: string
 }
+interface Props {
+	onJumpDetail: Function
+}
+export default function ShopList(props: Props) {
+	let navigate = useNavigate();
 
-export default function ShopList() {
 	let [list, setList] = useState<List[]>([{
 		id: 1,
 		name: 1,
@@ -45,11 +50,16 @@ export default function ShopList() {
 		name: 9,
 		src: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png'
 	}])
+		
+	function jumpDetail(id: number) {//跳转详情页
+	  navigate(`/detail/${id}`);
+		props.onJumpDetail(id)
+	}
 	return (
 		<div className={styles.list}>
 			{
 				list.map(v => {
-					return <div className={styles.item} key={v.id}>
+					return <div className={styles.item} key={v.id} onClick={() => jumpDetail(v.id)}>
 						<Image
 							className={styles.imgContainer}
 							preview={{ visible: false }}

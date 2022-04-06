@@ -1,16 +1,38 @@
-import { useParams, useSearchParams, useLocation } from 'react-router-dom';
+import { useParams, /*useSearchParams, useLocation*/ } from 'react-router-dom';
+import styles from './index.module.scss';
+import { useRef, useState } from 'react'
+import { Canvas, useFrame } from '@react-three/fiber';
 
-type LocationState = {
-	readonly key?: number
-} | null
+function Box(props: JSX.IntrinsicElements['mesh']) {
+  const ref = useRef<THREE.Mesh>(null!)
+  const [hovered, hover] = useState(false)
+  const [clicked, click] = useState(false)
+  useFrame((state, delta) => (ref.current.rotation.x += 0.01))
+  return (
+    <mesh
+      {...props}
+      ref={ref}
+      scale={clicked ? 1.5 : 1}
+      onClick={(event) => click(!clicked)}
+      onPointerOver={(event) => hover(true)}
+      onPointerOut={(event) => hover(false)}>
+      <boxGeometry args={[1, 1, 1]} />
+      <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
+    </mesh>
+  )
+}
 
-function Detail() {
+export default function Detail() {
 	let params = useParams();
-	let location = useLocation();
-	let state = location.state as LocationState;
-	let [searchParams] = useSearchParams();
+
 	return (
-		<div className="list">Detail/params={params.id},query={searchParams.get("type")},state={state?.key}</div>
+		<div className={styles.detail}>
+			<Canvas camera = {{ position: [0, 0, 5] }}>
+				<ambientLight />
+				<pointLight position={[10, 10, 10]} />
+				<Box position={[-1.2, 0, 0]} />
+				<Box position={[1.2, 0, 0]} />
+			</Canvas>
+		</div>
 	)
 }
-export default Detail;
