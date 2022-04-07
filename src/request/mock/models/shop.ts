@@ -1,19 +1,25 @@
 import request from '../request';
-import { shopDetail } from 'assets/interface/shop'
+import { shopDetail, List } from 'assets/interface/shop'
 
-async function getDetail({id}: {id: number}): Promise<shopDetail> {
+async function getDetail({id}: {id: number}): Promise<shopDetail> {//商品详情
   let res: any = await request('shopDetail');
   return res.find((v: shopDetail) => v.id === id);
 }
 
-async function getSwiperList(num: number = 3): Promise<shopDetail[]> {
+async function getSwiperList(num: number = 3): Promise<List[]> {//商品轮播图列表
   let res: any = await request('shopList');
-  let {records, total} = res;
-  let list: shopDetail[] = [];
+  let {records} = res;
+  let list: List[] = [];
+  let copyRecords = JSON.parse(JSON.stringify(records));
+  let count = records.length;
   for(let i = 0; i < num; i ++) {
-    let index = Math.floor(Math.random() * total);
-    list.push(records[index]);
-    // records.splice(index, 1);
+    let index = Math.floor(Math.random() * count);
+    list.push(copyRecords[index]);
+    copyRecords.splice(index, 1);
+    count --;
+    if(count < num) {
+      break;
+    }
   }
   return list;
 }

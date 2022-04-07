@@ -10,15 +10,17 @@ interface Props {
 }
 export default function ShopList(props: Props) {
 	let navigate = useNavigate();
+	let { list } = props;
 
 	function jumpDetail(id: number) {//跳转详情页
 	  navigate(`/detail/${id}`);
 		props.onJumpDetail(id)
 	}
+
 	return (
 		<div className={styles.list}>
 			{
-				props.list.map(v => {
+				list.map(v => {
 					return <div className={styles.item} key={v.id} onClick={() => jumpDetail(v.id)}>
 						<Image
 							className={styles.imgContainer}
@@ -29,6 +31,10 @@ export default function ShopList(props: Props) {
 						/>
 					</div>
 				})
+				
+			}
+			{
+				new Array(8 % list.length || 0).fill(Math.random()).map(v => <div className={styles.item} key={v}></div>)
 			}
 		</div>
 	)

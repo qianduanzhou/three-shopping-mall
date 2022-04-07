@@ -54,14 +54,14 @@ export default function Detail() {
 
   useEffect(() => {
     getDetail()
-  })
+  }, [detail])
 
   return (
     <div className={styles.detail}>
       <Canvas camera={{ position: [0.4, 0.4, 0.4] }}>
         <CameraController />
         <ambientLight intensity={1}/>
-        <spotLight intensity={10} angle={10} penumbra={10} position={[5, 5, 5]} castShadow />
+        <spotLight intensity={1} angle={10} penumbra={10} position={[5, 5, 5]} castShadow />
         <Model/>
       </Canvas>
     </div>

@@ -7,7 +7,16 @@
       "name": "热气球",
       "type": "glb",
       "fileName": "ball",
-      "src": "assets/imgs/models/ball.png"
+      "src": "ball.png",
+      "bigSrc": "ball-l.png"
+    },
+    {
+      "id": 2,
+      "name": "心脏",
+      "type": "glb",
+      "fileName": "heart",
+      "src": "heart.png",
+      "bigSrc": "heart-l.png"
     }
   ]
 }
