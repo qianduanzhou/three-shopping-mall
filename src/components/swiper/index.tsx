@@ -1,12 +1,18 @@
 import styles from './index.module.scss';
 import { Carousel, Image } from 'antd';
 import { useState } from 'react';
+import { List } from 'assets/interface/shop'
+
 interface ImageList {
 	id: number
 	src: string
 }
 
-export default function Swiper() {
+interface Props {
+	list: List[]
+}
+
+export default function Swiper(props: Props) {
 	let [imgList, setImgList] = useState<ImageList[]>([{
 		id: 1,
 		src: "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
@@ -18,18 +24,18 @@ export default function Swiper() {
 		src: "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
 	}])
 	function onChange(a: number) {
-		console.log(a);
+		// console.log(a);
 	}
 	return (
 		<div className={styles.swiper}>
-			<Carousel afterChange={onChange} autoplay>
-				{imgList.map(v => {
+			<Carousel afterChange={onChange}>
+				{props.list.map(v => {
 					return <div className={styles.swiperItem} key={v.id}>
 						<Image
 							width="100%"
 							height={400}
 							preview={{ visible: false }}
-							src={v.src}
+							src={require(`assets/imgs/models/${v.src}`)}
 						/>
 					</div>
 				})}

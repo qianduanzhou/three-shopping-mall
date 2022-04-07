@@ -27,6 +27,7 @@
       "static/*": ["src/static/*"],
       "utils/*": ["src/utils/*"],
       "assets/*": ["src/assets/*"],
+      "request/*": ["src/request/*"]
     }
   },
   "include": [
