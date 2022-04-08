@@ -38,6 +38,7 @@ export default function Detail() {
     let { id } = params;
     try {
       let res = await shopApi.getDetail({ id: Number(id) });
+      console.log('detail', res)
       setDetail(res)
     } catch (error) {
       console.log('error:', error)
@@ -45,7 +46,7 @@ export default function Detail() {
   }
   function checkCollectionion() {//判断是否已收藏
     let collectionList = localStorage.getItem("collectionList"),
-    list = collectionList ? JSON.parse(collectionList) : [];
+      list = collectionList ? JSON.parse(collectionList) : [];
     if (list.includes(detail.id)) {
       setIsCollection(true);
     } else {
@@ -67,10 +68,11 @@ export default function Detail() {
     localStorage.setItem("collectionList", JSON.stringify(list));
   }
 
-
-  detail === null && getDetail()
   useEffect(() => {
-    detail !== null && checkCollectionion();
+    getDetail();
+  }, [])
+  useEffect(() => {
+    detail !== null && checkCollectionion()
   }, [detail])
 
   // function Box() {
@@ -96,13 +98,15 @@ export default function Detail() {
           onClick={collect}></IconFont>
       </header>
       <main>
-        <Canvas camera={{ position: [0.3, 0, 0.3] }}>
-          <CameraController />
-          <ambientLight intensity={1} />
-          <spotLight intensity={1} angle={10} penumbra={10} position={[5, 5, 5]} castShadow />
-          <axesHelper></axesHelper>
-          { detail !== null && <Model />}
-        </Canvas>
+        <Suspense fallback={null}>
+          <Canvas camera={{ position: [0.3, 0, 0.3] }}>
+            <CameraController />
+            <ambientLight intensity={1} />
+            <spotLight intensity={1} angle={10} penumbra={10} position={[5, 5, 5]} castShadow />
+            <axesHelper></axesHelper>
+            {detail !== null && <Model />}
+          </Canvas>
+        </Suspense>
       </main>
     </div>
   )
