@@ -101,7 +101,7 @@ export default function Detail() {
           <ambientLight intensity={1} />
           <spotLight intensity={1} angle={10} penumbra={10} position={[5, 5, 5]} castShadow />
           <axesHelper></axesHelper>
-          <Model />
+          { detail !== null && <Model />}
         </Canvas>
       </main>
     </div>
