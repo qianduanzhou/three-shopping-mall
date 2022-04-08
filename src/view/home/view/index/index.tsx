@@ -41,7 +41,7 @@ export default function Index() {
     <div className={styles.index}>
       <Search />
       <div className={styles.shopContainer}>
-        <Swiper list={swiperList} />
+        <Swiper list={swiperList} onJumpDetail={handleShopListJumpDetail} />
         <ShopList list={list} onJumpDetail={handleShopListJumpDetail} />
       </div>
     </div>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './index.module.scss';
 import classNames from 'classnames/bind';
-import { useLocation } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 let cx = classNames.bind(styles);
 interface Nav {
 	left: NavItem[]
@@ -13,7 +13,10 @@ interface NavItem {
 	text: string
 }
 export default function TopNav() {
-	let location = useLocation();
+	let location = useLocation(),
+	navigate = useNavigate(),
+		{ pathname } = location;
+
 	let [nav, setNav] = useState<Nav>({//导航栏对象
 		left: [{//左侧
 			id: 0,
@@ -24,7 +27,7 @@ export default function TopNav() {
 			text: "商品"
 		}, {
 			id: 2,
-			text: "购物车"
+			text: "收藏"
 		}, {
 			id: 3,
 			text: "我的"
@@ -39,6 +42,22 @@ export default function TopNav() {
 	}
 	function clickNav(id: number) {//点击导航栏
 		changeActived(id);
+		switch (id) {
+			case 0:
+				navigate(`/`);
+				break;
+			case 1:
+				navigate(`/list`);
+				break;
+			case 2:
+
+				break;
+			case 3:
+
+				break;
+			default:
+				break;
+		}
 	}
 	function changeActived(id: number) {//改成jhi
 		setNav({
@@ -47,8 +66,7 @@ export default function TopNav() {
 		});
 	}
 	function handleLocation() {//处理location
-		let { pathname } = location;
-		if(pathname.includes('/detail/') || pathname.includes('/list')) {
+		if (pathname.includes('/detail/') || pathname.includes('/list')) {
 			changeActived(1);
 		} else {
 			changeActived(0);
@@ -57,7 +75,7 @@ export default function TopNav() {
 
 	useEffect(() => {
 		handleLocation();
-	})
+	}, [pathname])
 	return (
 		<div className={styles.container}>
 			<div className={styles.left}>
