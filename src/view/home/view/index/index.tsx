@@ -34,8 +34,12 @@ export default function Index() {
     }
   }
 
-  list.length === 0 && getList();
-  swiperList.length === 0 && getSwiperList();
+  useEffect(() => {
+    getList();
+  }, [])
+  useEffect(() => {
+    getSwiperList();
+  }, [])
  
   return (
     <div className={styles.index}>

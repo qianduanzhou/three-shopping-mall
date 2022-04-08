@@ -30,6 +30,7 @@ const CameraController = () => {
   return null;
 };
 export default function Detail() {
+  debugger
   let params = useParams();
   let [detail, setDetail] = useState<shopDetail>(null!)
   let [isCollection, setIsCollection] = useState(false)
@@ -38,13 +39,13 @@ export default function Detail() {
     let { id } = params;
     try {
       let res = await shopApi.getDetail({ id: Number(id) });
-      console.log('detail', res)
       setDetail(res)
+      checkCollectionion(res)
     } catch (error) {
       console.log('error:', error)
     }
   }
-  function checkCollectionion() {//判断是否已收藏
+  function checkCollectionion(detail: shopDetail) {//判断是否已收藏
     let collectionList = localStorage.getItem("collectionList"),
       list = collectionList ? JSON.parse(collectionList) : [];
     if (list.includes(detail.id)) {
@@ -71,9 +72,6 @@ export default function Detail() {
   useEffect(() => {
     getDetail();
   }, [])
-  useEffect(() => {
-    detail !== null && checkCollectionion()
-  }, [detail])
 
   // function Box() {
   //   let mtl = new MTLLoader();
