@@ -30,7 +30,6 @@ const CameraController = () => {
   return null;
 };
 export default function Detail() {
-  debugger
   let params = useParams();
   let [detail, setDetail] = useState<shopDetail>(null!)
   let [isCollection, setIsCollection] = useState(false)
@@ -85,7 +84,7 @@ export default function Detail() {
 
   function Model() {//模型
     let glft = useGLTF(`/models/${detail.type}/${detail.fileName}.glb`, true);
-    return <primitive object={glft.scene} position={[0, -0.1, 0]} />
+    return <primitive object={glft.scene} position={detail.modelPosition} />
   }
 
   return (
@@ -96,15 +95,16 @@ export default function Detail() {
           onClick={collect}></IconFont>
       </header>
       <main>
+        {detail !== null && 
         <Suspense fallback={null}>
-          <Canvas camera={{ position: [0.3, 0, 0.3] }}>
+          <Canvas camera={{ position: detail.cameraPosition }}>
             <CameraController />
             <ambientLight intensity={1} />
-            <spotLight intensity={1} angle={10} penumbra={10} position={[5, 5, 5]} castShadow />
+            <spotLight intensity={1} angle={10} penumbra={10} position={ detail.cameraPosition } castShadow />
             <axesHelper></axesHelper>
-            {detail !== null && <Model />}
+            <Model />
           </Canvas>
-        </Suspense>
+        </Suspense>}
       </main>
     </div>
   )

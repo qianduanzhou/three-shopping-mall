@@ -8,7 +8,9 @@
       "type": "glb",
       "fileName": "ball",
       "src": "ball.png",
-      "bigSrc": "ball-l.png"
+      "bigSrc": "ball-l.png",
+      "modelPosition": [0, -0.1, 0],
+      "cameraPosition": [0.3, 0, 0.3]
     },
     {
       "id": 2,
@@ -16,7 +18,19 @@
       "type": "glb",
       "fileName": "heart",
       "src": "heart.png",
-      "bigSrc": "heart-l.png"
+      "bigSrc": "heart-l.png",
+      "modelPosition": [0, -0.1, 0],
+      "cameraPosition": [0.3, 0, 0.3]
+    },
+    {
+      "id": 3,
+      "name": "卡车",
+      "type": "glb",
+      "fileName": "truck",
+      "src": "truck.png",
+      "bigSrc": "truck-l.png",
+      "modelPosition": [0, -1, 0],
+      "cameraPosition": [3, 0, 3]
     }
   ]
 }

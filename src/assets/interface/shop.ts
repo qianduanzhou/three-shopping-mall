@@ -17,4 +17,6 @@ export interface shopDetail {
 	fileName: string
 	src: string
 	bigSrc: string
+	modelPosition: [number, number, number]
+	cameraPosition: [number, number, number]
 }

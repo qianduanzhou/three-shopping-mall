@@ -17,9 +17,9 @@
       },
       {
         "id": 3,
-        "name": 3,
-        "src": "ball.png",
-        "bigSrc": "ball-l.png"
+        "name": "卡车",
+        "src": "truck.png",
+        "bigSrc": "truck-l.png"
       },
       {
         "id": 4,
