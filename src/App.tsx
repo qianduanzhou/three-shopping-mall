@@ -6,7 +6,7 @@ import Index from 'view/home/view/index';
 import List from 'view/home/view/list';
 import Counter from 'view/counter';
 import Detail from 'view/home/view/detail';
-
+import NotFound from 'view/notFound';
 function App() {
 
 	return (
@@ -28,9 +28,7 @@ function App() {
 				<Route
 					path="*"
 					element={
-						<main style={{ padding: "1rem" }}>
-							<p>没有相关页面!</p>
-						</main>
+						<NotFound />
 					}
 				/>
 			</Routes>
