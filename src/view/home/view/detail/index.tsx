@@ -1,6 +1,8 @@
 import { useParams, /*useSearchParams, useLocation*/ } from 'react-router-dom';
 import styles from './index.module.scss';
 import { useRef, useState, useEffect, Suspense } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { addCollection, removeCollection, selectCollectionList } from 'app/shop/shopSlice'
 import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
 
@@ -33,7 +35,8 @@ export default function Detail() {
   let params = useParams();
   let [detail, setDetail] = useState<shopDetail>(null!)
   let [isCollection, setIsCollection] = useState(false)
-
+  let dispatch = useDispatch();
+  let collectionList = useSelector(selectCollectionList);
   async function getDetail() {//获取商品详情
     let { id } = params;
     try {
@@ -45,9 +48,7 @@ export default function Detail() {
     }
   }
   function checkCollectionion(detail: shopDetail) {//判断是否已收藏
-    let collectionList = localStorage.getItem("collectionList"),
-      list = collectionList ? JSON.parse(collectionList) : [];
-    if (list.includes(detail.id)) {
+    if (collectionList.includes(detail.id)) {
       setIsCollection(true);
     } else {
       setIsCollection(false);
@@ -55,17 +56,13 @@ export default function Detail() {
   }
 
   function collect() {//收藏/取消收藏
-    let collectionList = localStorage.getItem("collectionList"),
-      list = collectionList ? JSON.parse(collectionList) : [];
-    if (!list.includes(detail.id)) {
-      list.push(detail.id);
+    if (!collectionList.includes(detail.id)) {
+      dispatch(addCollection(detail.id))
       setIsCollection(true);
     } else {
-      let index = list.findIndex((v: number) => v === detail.id);
-      list.splice(index, 1)
+      dispatch(removeCollection(detail.id))
       setIsCollection(false);
     }
-    localStorage.setItem("collectionList", JSON.stringify(list));
   }
 
   useEffect(() => {

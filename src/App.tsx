@@ -1,7 +1,6 @@
 import './App.scss';
 // import { Component } from "react";
-import { Routes, Route, useNavigate, NavLink } from 'react-router-dom';
-import { Button } from "antd";
+import { Routes, Route } from 'react-router-dom';
 import Home from 'view/home';
 import Index from 'view/home/view/index';
 import List from 'view/home/view/list';
@@ -9,6 +8,7 @@ import Counter from 'view/counter';
 import Detail from 'view/home/view/detail';
 
 function App() {
+
 	return (
 		<div className="App">
 			<Routes>
