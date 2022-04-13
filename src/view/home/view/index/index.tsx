@@ -34,6 +34,15 @@ export default function Index() {
     }
   }
 
+  async function searchChange(e: string) {//输入框改变
+    try {
+      let res: any = await shopApi.searchShopList({name: e});
+      setList(res);
+    } catch (error) {
+      console.log('[error]:', error);
+    }
+  }
+
   useEffect(() => {
     getList();
   }, [])
@@ -43,7 +52,7 @@ export default function Index() {
  
   return (
     <div className={styles.index}>
-      <Search />
+      <Search searchChange={searchChange}/>
       <div className={styles.shopContainer}>
         <Swiper list={swiperList} onJumpDetail={handleShopListJumpDetail} />
         <ShopList list={list} onJumpDetail={handleShopListJumpDetail} />

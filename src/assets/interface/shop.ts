@@ -1,6 +1,6 @@
 export interface List {//商品列表
 	id: number
-	name: string | number
+	name: string
 	src: string
 	bigSrc: string
 }

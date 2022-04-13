@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './index.module.scss';
 import { useNavigate } from 'react-router';
 import { Image } from 'antd';
@@ -10,6 +10,7 @@ interface Props {
 }
 export default function ShopList(props: Props) {
 	let navigate = useNavigate();
+	let [fixList, setFixList] = useState<number[]>([]);
 	let { list } = props;
 
 	function jumpDetail(id: number) {//跳转详情页
@@ -17,13 +18,14 @@ export default function ShopList(props: Props) {
 	  props.onJumpDetail && props.onJumpDetail(id)
 	}
 
-
-	let fixList = getFixDom(4, list.length)
+	useEffect(() => {
+		setFixList(getFixDom(4, list.length));
+	}, [fixList])
 	return (
 		<div className={styles.list}>
 			{
 				list.map(v => {
-					return <div className={styles.item} key={v.id} onClick={() => jumpDetail(v.id)}>
+					return <div className={styles.item} key={v.id} onClick={() => jumpDetail(v.id)} title={v.name}>
 						<Image
 							className={styles.imgContainer}
 							preview={{ visible: false }}

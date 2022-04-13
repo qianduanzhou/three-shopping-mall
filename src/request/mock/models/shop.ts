@@ -32,9 +32,19 @@ async function getCollectList(lstId: number[]): Promise<List[]> {//商品轮播�
   return list;
 }
 
+async function searchShopList({name}: {name: string}): Promise<List[]> {//商品轮播图列表
+  let res: any = await request('shopList');
+  let {records} = res;
+  let copyRecords = JSON.parse(JSON.stringify(records));
+  let list: List[] = copyRecords.filter((v: shopDetail) => v.name.includes(name));
+  
+  return list;
+}
+
 const shop = {
   getDetail,
   getSwiperList,
-  getCollectList
+  getCollectList,
+  searchShopList
 } 
 export default shop;

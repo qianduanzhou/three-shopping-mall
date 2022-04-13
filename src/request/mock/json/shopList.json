@@ -23,25 +23,25 @@
       },
       {
         "id": 4,
-        "name": 4,
+        "name": "4",
         "src": "ball.png",
         "bigSrc": "ball-l.png"
       },
       {
         "id": 5,
-        "name": 5,
+        "name": "5",
         "src": "ball.png",
         "bigSrc": "ball-l.png"
       },
       {
         "id": 6,
-        "name": 6,
+        "name": "6",
         "src": "ball.png",
         "bigSrc": "ball-l.png"
       },
       {
         "id": 7,
-        "name": 7,
+        "name": "7",
         "src": "ball.png",
         "bigSrc": "ball-l.png"
       }

@@ -1,0 +1,10 @@
+.list {
+    padding: 0 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .shopContainer {
+        height: calc(100% - 60px);
+        overflow: auto;
+    }
+}
