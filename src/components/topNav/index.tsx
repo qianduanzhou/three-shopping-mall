@@ -28,9 +28,6 @@ export default function TopNav() {
 		}, {
 			id: 2,
 			text: "收藏"
-		}, {
-			id: 3,
-			text: "我的"
 		}],
 		activedId: 0,//当前导航栏
 	});
@@ -50,10 +47,9 @@ export default function TopNav() {
 				navigate(`/list`);
 				break;
 			case 2:
-
+				navigate(`/collection`);
 				break;
 			case 3:
-
 				break;
 			default:
 				break;
@@ -68,6 +64,8 @@ export default function TopNav() {
 	function handleLocation() {//处理location
 		if (pathname.includes('/detail/') || pathname.includes('/list')) {
 			changeActived(1);
+		} else if (pathname.includes('/collection')) {
+			changeActived(2);
 		} else {
 			changeActived(0);
 		}

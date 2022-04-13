@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from 'view/home';
 import Index from 'view/home/view/index';
 import List from 'view/home/view/list';
+import Collection from 'view/home/view/collection';
 import Counter from 'view/counter';
 import Detail from 'view/home/view/detail';
 import NotFound from 'view/notFound';
@@ -15,6 +16,7 @@ function App() {
 				<Route path="/" element={<Home />} >
 					<Route path="" element={<Index />} />
 					<Route path="list" element={<List />} />
+					<Route path="collection" element={<Collection />} />
 					<Route path="detail">
 						<Route index element={
 							<main style={{ padding: "1rem" }}>

@@ -3,10 +3,10 @@ import styles from './index.module.scss';
 import { useNavigate } from 'react-router';
 import { Image } from 'antd';
 import { List } from 'assets/interface/shop';
-
+import { getFixDom } from 'utils/index';
 interface Props {
 	list: List[]
-	onJumpDetail: Function
+	onJumpDetail?: Function
 }
 export default function ShopList(props: Props) {
 	let navigate = useNavigate();
@@ -14,9 +14,11 @@ export default function ShopList(props: Props) {
 
 	function jumpDetail(id: number) {//跳转详情页
 	  navigate(`/detail/${id}`);
-		props.onJumpDetail(id)
+	  props.onJumpDetail && props.onJumpDetail(id)
 	}
 
+
+	let fixList = getFixDom(4, list.length)
 	return (
 		<div className={styles.list}>
 			{
@@ -30,11 +32,10 @@ export default function ShopList(props: Props) {
 							height={170}
 						/>
 					</div>
-				})
-				
+				})	
 			}
 			{
-				new Array(8 % list.length || 0).fill(Math.random()).map(v => <div className={styles.item} key={v}></div>)
+				fixList.map(v => <div className={styles.item} key={v}></div>)
 			}
 		</div>
 	)

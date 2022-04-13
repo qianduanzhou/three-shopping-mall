@@ -10,7 +10,7 @@ import { useGLTF } from '@react-three/drei';
 // import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { shop as shopApi } from 'request/mock';
-import { shopDetail } from 'assets/interface/shop'
+import { shopDetail } from 'assets/interface/shop';
 import { createFromIconfontCN } from '@ant-design/icons';
 const IconFont = createFromIconfontCN({
   scriptUrl: '//at.alicdn.com/t/font_3311976_j9x681cjwa.js',
