@@ -23,7 +23,9 @@ class Home extends Component<any, any> {
 					<Content className={styles.content}>
 						<Outlet />
 					</Content>
-					<Footer className={styles.footer}>Footer</Footer>
+					<Footer className={styles.footer}>
+						备案/许可证编号为：粤ICP备2022018683号
+					</Footer>
 				</Layout>
 			</div>
 		)
