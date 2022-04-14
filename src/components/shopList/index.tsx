@@ -21,7 +21,7 @@ export default function ShopList(props: Props) {
 
 	useEffect(() => {
 		setFixList(getFixDom(4, list.length));
-	}, [fixList])
+	}, [list])
 	return (
 		<div className={styles.list}>
 			{
