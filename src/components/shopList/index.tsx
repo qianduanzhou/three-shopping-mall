@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router';
 import { Image } from 'antd';
 import { shopDetailMin } from 'assets/interface/shop';
 import { getFixDom } from 'utils/index';
+import Loading from 'components/loading';
 interface Props {
 	list: shopDetailMin[]
 	onJumpDetail?: Function
@@ -32,6 +33,9 @@ export default function ShopList(props: Props) {
 							src={require(`assets/imgs/models/${v.src}`)}
 							width={300}
 							height={170}
+							placeholder={
+								<Loading width={300} height={170}></Loading>
+							}
 						/>
 					</div>
 				})	

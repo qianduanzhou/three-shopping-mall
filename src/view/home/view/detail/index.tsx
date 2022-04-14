@@ -1,4 +1,6 @@
 import { useParams, /*useSearchParams, useLocation*/ } from 'react-router-dom';
+import Loading from 'components/loading';
+
 import styles from './index.module.scss';
 import { useState, useEffect, Suspense } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
@@ -93,7 +95,7 @@ export default function Detail() {
       </header>
       <main>
         {detail !== null && 
-        <Suspense fallback={null}>
+        <Suspense fallback={<Loading width={"100%"} height={"100%"}></Loading>}>
           <Canvas camera={{ position: detail.cameraPosition }}>
             <CameraController />
             <ambientLight intensity={1} />

@@ -2,6 +2,7 @@ import styles from './index.module.scss';
 import { Carousel, Image } from 'antd';
 import { shopDetailMin } from 'assets/interface/shop'
 import { useNavigate } from 'react-router';
+import Loading from 'components/loading';
 
 
 interface Props {
@@ -26,8 +27,12 @@ export default function Swiper(props: Props) {
 						<Image
 							height={400}
 							preview={{ visible: false }}
+							placeholder={
+								<Loading width={"100%"} height={400}></Loading>
+							}
 							src={require(`assets/imgs/models/${v.bigSrc}`)}
-							onClick={() => {jumpDetail(v.id)}}
+							onClick={() => {jumpDetail(v.id)}
+						}
 						/>
 					</div>
 				})}
