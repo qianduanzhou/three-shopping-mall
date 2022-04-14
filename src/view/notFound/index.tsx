@@ -92,8 +92,7 @@ export default function NotFound() {
         <ambientLight intensity={1} />
         <spotLight intensity={1} angle={10} penumbra={10} position={[1, 1, 1]} castShadow />
         <NotFoundCom />
-        <axesHelper></axesHelper>
-
+        {/* <axesHelper></axesHelper> */}
       </Canvas>
     </Suspense>
   )

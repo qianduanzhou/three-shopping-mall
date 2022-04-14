@@ -31,6 +31,56 @@
       "bigSrc": "truck-l.png",
       "modelPosition": [0, -1, 0],
       "cameraPosition": [3, 0, 3]
+    },
+    {
+      "id": 4,
+      "name": "飞机",
+      "type": "glb",
+      "fileName": "plant",
+      "src": "plant.png",
+      "bigSrc": "plant-l.png",
+      "modelPosition": [0, -0.05, 0],
+      "cameraPosition": [0.2, 0, 0.2]
+    },
+    {
+      "id": 5,
+      "name": "足球",
+      "type": "glb",
+      "fileName": "football",
+      "src": "football.png",
+      "bigSrc": "football-l.png",
+      "modelPosition": [0, -0.03, 0],
+      "cameraPosition": [0.15, 0, 0.15]
+    },
+    {
+      "id": 6,
+      "name": "汉堡包",
+      "type": "glb",
+      "fileName": "hamburger",
+      "src": "hamburger.png",
+      "bigSrc": "hamburger-l.png",
+      "modelPosition": [0, -0.05, 0],
+      "cameraPosition": [0.2, 0, 0.2]
+    },
+    {
+      "id": 7,
+      "name": "摩托车",
+      "type": "glb",
+      "fileName": "motorbike",
+      "src": "motorbike.png",
+      "bigSrc": "motorbike-l.png",
+      "modelPosition": [0, -0.15, 0],
+      "cameraPosition": [0.6, 0, 0.6]
+    },
+    {
+      "id": 8,
+      "name": "冰淇淋",
+      "type": "glb",
+      "fileName": "ice",
+      "src": "ice.png",
+      "bigSrc": "ice-l.png",
+      "modelPosition": [0, -0.04, 0],
+      "cameraPosition": [0.1, 0, 0.1]
     }
   ]
 }

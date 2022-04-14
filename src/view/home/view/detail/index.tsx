@@ -100,7 +100,7 @@ export default function Detail() {
             <CameraController />
             <ambientLight intensity={1} />
             <spotLight intensity={1} angle={10} penumbra={10} position={ detail.cameraPosition } castShadow />
-            <axesHelper></axesHelper>
+            {/* <axesHelper></axesHelper> */}
             <Model />
           </Canvas>
         </Suspense>}
