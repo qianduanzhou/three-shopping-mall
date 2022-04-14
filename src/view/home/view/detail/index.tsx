@@ -1,9 +1,9 @@
 import { useParams, /*useSearchParams, useLocation*/ } from 'react-router-dom';
 import styles from './index.module.scss';
-import { useRef, useState, useEffect, Suspense } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { addCollection, removeCollection, selectCollectionList } from 'app/shop/shopSlice'
-import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber';
+import { Canvas, useThree, /*useFrame, useLoader*/ } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
 
 // import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';

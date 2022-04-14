@@ -1,16 +1,11 @@
 import styles from './index.module.scss';
 import { Carousel, Image } from 'antd';
-import { useState } from 'react';
-import { List } from 'assets/interface/shop'
+import { shopDetailMin } from 'assets/interface/shop'
 import { useNavigate } from 'react-router';
 
-interface ImageList {
-	id: number
-	src: string
-}
 
 interface Props {
-	list: List[]
+	list: shopDetailMin[]
 	onJumpDetail: Function
 }
 

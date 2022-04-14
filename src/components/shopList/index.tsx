@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import styles from './index.module.scss';
 import { useNavigate } from 'react-router';
 import { Image } from 'antd';
-import { List } from 'assets/interface/shop';
+import { shopDetailMin } from 'assets/interface/shop';
 import { getFixDom } from 'utils/index';
 interface Props {
-	list: List[]
+	list: shopDetailMin[]
 	onJumpDetail?: Function
 }
 export default function ShopList(props: Props) {

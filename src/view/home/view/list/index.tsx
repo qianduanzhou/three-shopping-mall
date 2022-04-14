@@ -4,10 +4,10 @@ import { useState, useEffect } from 'react';
 import Search from 'components/search';//搜索框
 import ShopList from 'components/shopList';//商品列表
 import { request, shop as shopApi } from 'request/mock';
-import { List as ListItf } from 'assets/interface/shop';
+import { shopDetailMin } from 'assets/interface/shop';
 
 function List() {
-	let [list, setList] = useState<ListItf[]>([]);
+	let [list, setList] = useState<shopDetailMin[]>([]);
 	useEffect(() => {
 		getList();
 	}, [])

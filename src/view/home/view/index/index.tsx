@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { List } from 'assets/interface/shop';
+import { shopDetailMin } from 'assets/interface/shop';
 import styles from './index.module.scss';
 import Swiper from 'components/swiper';//轮播图
 import Search from 'components/search';//搜索框
@@ -7,8 +7,8 @@ import ShopList from 'components/shopList';//商品列表
 import { request, shop as shopApi } from 'request/mock';
 
 export default function Index() {
-  let [list, setList] = useState<List[]>([]);
-  let [swiperList, setSwiperList] = useState<List[]>([]);
+  let [list, setList] = useState<shopDetailMin[]>([]);
+  let [swiperList, setSwiperList] = useState<shopDetailMin[]>([]);
 
   function handleShopListJumpDetail(id: string) {//处理跳转详情
 
