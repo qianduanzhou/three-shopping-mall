@@ -1,0 +1,16 @@
+.swiper {
+	width: 100%;
+
+	.swiperItem {
+		height: 400px;
+		border-radius: 50px;
+		cursor: pointer;
+		:global {
+			.ant-image {
+				.ant-image-mask {
+					display: none;
+				}
+			}
+		}
+	}
+}

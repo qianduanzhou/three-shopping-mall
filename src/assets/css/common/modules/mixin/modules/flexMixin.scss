@@ -1,0 +1,84 @@
+//公用flex
+@mixin flex-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+@mixin flex-row-allCenter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+@mixin flex-row-levelCenter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+@mixin flex-row-levelSpt {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+@mixin flex-row-levelSpa {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around
+}
+@mixin flex-row-levelRight-verticalCenter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+}
+@mixin flex-row-levelSpt-verticalCenter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin flex-row-levelSpa-verticalCenter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+@mixin flex-row-verticalCenter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+@mixin flex-row-verticalCenter-noWrap {
+    display: flex;
+    align-items: center;
+}
+@mixin flex-column-allCenter {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+@mixin flex-column-levelCenter {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+@mixin flex-column-levelCenter-noWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@mixin flex-column-levelCenter-verticalSpa {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+@mixin flex-column-levelCenter-verticalSpa-noWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}

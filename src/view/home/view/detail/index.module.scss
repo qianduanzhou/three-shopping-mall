@@ -1,0 +1,22 @@
+.detail {
+	@import 'assets/css/common/index.scss';
+  width: 100%;
+  height: 100%;
+  header {
+    height: 40px;
+    @include flex-row-allCenter;
+    .title {
+      font-size: 24px;
+      line-height: 40px;
+      font-weight: bold;
+      margin-right: 20px;
+    }
+    .icon {
+      cursor: pointer;
+      font-size: 25px;
+    }
+  }
+  main {
+    height: calc(100% - 40px);
+  }
+}

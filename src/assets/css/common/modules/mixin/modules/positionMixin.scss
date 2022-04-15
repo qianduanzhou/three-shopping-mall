@@ -1,0 +1,17 @@
+//公用position
+@mixin position-allCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@mixin position-level-Center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+@mixin position-vertical-Center {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}

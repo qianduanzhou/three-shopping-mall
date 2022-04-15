@@ -1,0 +1,32 @@
+.home {
+	@import 'assets/css/common/index.scss';
+	width: 100%;
+	height: 100%;
+
+	.layout {
+		width: 100%;
+		height: 100%;
+
+		.header {
+			padding: 0 300px;
+			background: #fff;
+			height: 50px;
+			line-height: 50px;
+			box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
+		}
+
+		.content {
+
+		}
+
+		.footer {
+			padding: 0 300px;
+			background: #fff;
+			height: 50px;
+			line-height: 50px;
+			box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
+			text-align: left;
+			font-size: 12px;
+		}
+	}
+}
