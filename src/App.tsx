@@ -20,7 +20,7 @@ function App() {
 					<Route path="detail">
 						<Route index element={
 							<main style={{ padding: "1rem" }}>
-								<p>没有找到商品！</p>
+								<p>没有找到物品！</p>
 							</main>
 						} />
 						<Route path=":id" element={<Detail />} />
@@ -70,7 +70,7 @@ export default App;
 //             <Route path="detail">
 //               <Route index element={
 //                 <main style={{ padding: "1rem" }}>
-//                   <p>没有找到商品！</p>
+//                   <p>没有找到物品！</p>
 //                 </main>
 //               } />
 //               <Route path=":id" element={<Detail />} />

@@ -3,7 +3,7 @@ import { shopDetailMin } from 'assets/interface/shop';
 import styles from './index.module.scss';
 import Swiper from 'components/swiper';//轮播图
 import Search from 'components/search';//搜索框
-import ShopList from 'components/shopList';//商品列表
+import ShopList from 'components/shopList';//物品列表
 import { request, shop as shopApi } from 'request/mock';
 
 export default function Index() {
@@ -14,7 +14,7 @@ export default function Index() {
 
   }
 
-  async function getList() {//获取商品列表
+  async function getList() {//获取物品列表
     try {
       let res: any = await request('shopList');
       setList(res.records);
