@@ -2,7 +2,7 @@ import styles from './index.module.scss';
 import { useState, useEffect } from 'react';
 
 import Search from 'components/search';//搜索框
-import ShopList from 'components/shopList';//商品列表
+import ShopList from 'components/shopList';//物品列表
 import { request, shop as shopApi } from 'request/mock';
 import { shopDetailMin } from 'assets/interface/shop';
 
@@ -11,7 +11,7 @@ function List() {
 	useEffect(() => {
 		getList();
 	}, [])
-	async function getList() {//获取商品列表
+	async function getList() {//获取物品列表
 		try {
 			let res: any = await request('shopList');
 			setList(res.records);

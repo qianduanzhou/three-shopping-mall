@@ -1,4 +1,4 @@
-export interface shopDetailMin {//商品列表
+export interface shopDetailMin {//物品列表
 	id: number
 	name: string
 	src: string

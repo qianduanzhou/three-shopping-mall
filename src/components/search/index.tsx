@@ -10,7 +10,7 @@ export default function SearchCom(props: Props) {
 	}
 	return (
 		<div className={styles.search}>
-			<Search placeholder="请输入商品名称" onSearch={onSearch} enterButton allowClear size="large" />
+			<Search placeholder="请输入物品名称" onSearch={onSearch} enterButton allowClear size="large" />
 		</div>
 	)
 }

@@ -39,7 +39,7 @@ export default function Detail() {
   let [isCollection, setIsCollection] = useState(false)
   let dispatch = useDispatch();
   let collectionList = useSelector(selectCollectionList);
-  async function getDetail() {//获取商品详情
+  async function getDetail() {//获取物品详情
     let { id } = params;
     try {
       let res = await shopApi.getDetail({ id: Number(id) });

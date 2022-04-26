@@ -1,12 +1,12 @@
 import request from '../request';
 import { shopDetail, shopDetailMin } from 'assets/interface/shop'
 
-async function getDetail({id}: {id: number}): Promise<shopDetail> {//商品详情
+async function getDetail({id}: {id: number}): Promise<shopDetail> {//物品详情
   let res: any = await request('shopDetail');
   return res.find((v: shopDetail) => v.id === id);
 }
 
-async function getSwiperList(num: number = 3): Promise<shopDetailMin[]> {//商品轮播图列表
+async function getSwiperList(num: number = 3): Promise<shopDetailMin[]> {//物品轮播图列表
   let res: any = await request('shopList');
   let {records} = res;
   let list: shopDetailMin[] = [];
@@ -24,7 +24,7 @@ async function getSwiperList(num: number = 3): Promise<shopDetailMin[]> {//商�
   return list;
 }
 
-async function getCollectList(lstId: number[]): Promise<shopDetailMin[]> {//商品轮播图列表
+async function getCollectList(lstId: number[]): Promise<shopDetailMin[]> {//物品轮播图列表
   let res: any = await request('shopList');
   let {records} = res;
   let copyRecords = JSON.parse(JSON.stringify(records));
@@ -32,7 +32,7 @@ async function getCollectList(lstId: number[]): Promise<shopDetailMin[]> {//商�
   return list;
 }
 
-async function searchShopList({name}: {name: string}): Promise<shopDetailMin[]> {//商品轮播图列表
+async function searchShopList({name}: {name: string}): Promise<shopDetailMin[]> {//物品轮播图列表
   let res: any = await request('shopList');
   let {records} = res;
   let copyRecords = JSON.parse(JSON.stringify(records));

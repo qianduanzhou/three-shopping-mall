@@ -24,7 +24,7 @@ export default function TopNav() {
 		}],
 		right: [{//右侧
 			id: 1,
-			text: "商品"
+			text: "物品"
 		}, {
 			id: 2,
 			text: "收藏"
