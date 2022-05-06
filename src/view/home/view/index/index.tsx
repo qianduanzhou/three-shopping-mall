@@ -18,9 +18,8 @@ export default function Index() {
     try {
       let res: any = await request('shopList');
       setList(res.records);
-      console.log('getList', res.records)
     } catch (error) {
-      console.log('[error]:', error);
+      console.log('[error]: ', error);
     }
   }
 
@@ -28,9 +27,8 @@ export default function Index() {
     try {
       let res: any = await shopApi.getSwiperList();
       setSwiperList(res);
-      console.log('swiperList', res)
     } catch (error) {
-      console.log('[error]:', error);
+      console.log('[error]: ', error);
     }
   }
 
@@ -39,7 +37,7 @@ export default function Index() {
       let res: any = await shopApi.searchShopList({name: e});
       setList(res);
     } catch (error) {
-      console.log('[error]:', error);
+      console.log('[error]: ', error);
     }
   }
 

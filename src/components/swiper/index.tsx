@@ -12,7 +12,7 @@ interface Props {
 
 export default function Swiper(props: Props) {
 	function onChange(a: number) {
-		// console.log(a);
+
 	}
 	let navigate = useNavigate();
 	function jumpDetail(id: number) {//跳转详情页
