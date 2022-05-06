@@ -7,6 +7,7 @@ import List from 'view/home/view/list';
 import Collection from 'view/home/view/collection';
 import Counter from 'view/counter';
 import Detail from 'view/home/view/detail';
+import Chart from 'view/chart';
 import NotFound from 'view/notFound';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
 						<Route path=":id" element={<Detail />} />
 					</Route>
 					<Route path="counter" element={<Counter />} />
+					<Route path="chart" element={<Chart />} />
 				</Route>
 				<Route
 					path="*"
