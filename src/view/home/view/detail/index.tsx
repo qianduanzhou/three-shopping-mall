@@ -4,7 +4,7 @@ import Loading from 'components/loading';
 import styles from './index.module.scss';
 import { useState, useEffect, Suspense } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { addCollection, removeCollection, selectCollectionList } from 'app/shop/shopSlice'
+import { addCollection, removeCollection, selectCollectionList } from 'app/shop'
 import { Canvas, useThree, /*useFrame, useLoader*/ } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
 
@@ -69,17 +69,7 @@ export default function Detail() {
 
   useEffect(() => {
     getDetail();
-  }, [])
-
-  // function Box() {
-  //   let mtl = new MTLLoader();
-  //   const result = useLoader(OBJLoader, '/models/chair.obj', (loader: any) => {
-  //     mtl.load('/models/chair.mtl', (data: any) => {
-  //       loader.setMaterials(data);
-  //     })
-  //   })
-  //   return <primitive object={result} />
-  // }
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   function Model() {//模型
     let glft = useGLTF(`/models/${detail.type}/${detail.fileName}.glb`, true);

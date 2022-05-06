@@ -19,6 +19,7 @@
     "@types/react-dom": "^17.0.14",
     "@types/three": "^0.139.0",
     "antd": "^4.19.3",
+    "axios": "^0.27.2",
     "babel-jest": "^27.4.2",
     "babel-loader": "^8.2.3",
     "babel-plugin-named-asset-import": "^0.3.8",
@@ -30,7 +31,6 @@
     "classnames": "^2.3.1",
     "css-loader": "^6.5.1",
     "css-minimizer-webpack-plugin": "^3.2.0",
-    "dotenv": "^10.0.0",
     "dotenv-expand": "^5.1.0",
     "eslint": "^8.3.0",
     "eslint-config-react-app": "^7.0.0",
@@ -74,8 +74,9 @@
     "workbox-webpack-plugin": "^6.4.1"
   },
   "scripts": {
-    "start": "node scripts/start.js",
+    "start": "dotenv -e .env.dev node scripts/start.js",
     "build": "node scripts/build.js",
+    "build-test": "node scripts/build.js",
     "test": "node scripts/test.js"
   },
   "eslintConfig": {
@@ -97,6 +98,7 @@
     ]
   },
   "devDependencies": {
+    "dotenv-cli": "^5.1.0",
     "node-sass": "^7.0.1",
     "sass-loader": "^12.6.0"
   },

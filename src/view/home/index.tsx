@@ -5,7 +5,7 @@ import TopNav from 'components/topNav';//顶部导航栏
 import { connect } from 'react-redux';
 import {
   initCollectionList
-} from 'app/shop/shopSlice'
+} from 'app/shop'
 import { Layout } from "antd";
 const { Header, Footer, Content } = Layout;
 class Home extends Component<any, any> {
@@ -34,7 +34,8 @@ class Home extends Component<any, any> {
 
 function mapStateToProps(state: any) {
 	return {
-		shop: state.shop
+		shop: state.shop,
+		user: state.user
 	}
 }
 function mapDispatchToProps(dispatch: Function) {

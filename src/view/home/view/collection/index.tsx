@@ -1,5 +1,5 @@
 import styles from './index.module.scss';
-import { selectCollectionList } from 'app/shop/shopSlice';
+import { selectCollectionList } from 'app/shop';
 import { useSelector } from 'react-redux';
 import ShopList from 'components/shopList';
 import { useEffect, useState } from 'react';
@@ -15,7 +15,7 @@ export default function Collection() {
     }
     useEffect(() => {
         getCollectList();
-    }, [])
+    }, []) // eslint-disable-line react-hooks/exhaustive-deps
     return (
         <div className={styles.collection}>
             <ShopList list={list}></ShopList>

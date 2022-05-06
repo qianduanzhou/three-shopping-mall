@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, Suspense, Fragment } from 'react'
+import { useRef, useEffect, Suspense, Fragment } from 'react'
 import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader';
 import { TextureLoader } from 'three/src/loaders/TextureLoader';

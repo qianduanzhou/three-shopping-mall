@@ -8,8 +8,12 @@ import Collection from 'view/home/view/collection';
 import Counter from 'view/counter';
 import Detail from 'view/home/view/detail';
 import NotFound from 'view/notFound';
-function App() {
 
+import request from 'request/index';
+function App() {
+	request({name: 'test'}).then(res => {
+		console.log('res', res)
+	})
 	return (
 		<div className="App">
 			<Routes>

@@ -25,5 +25,5 @@ export default function Loading(props: Props) {
         }
     }
 
-    return <img src={svg} style={{width: fixWidth, height: fixHeight}}/>
+    return <img src={svg} alt="" style={{width: fixWidth, height: fixHeight}}/>
 }

@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const counterSlice = createSlice({
   name: 'shop',
   initialState: {//state，通过reducer修改
-    collectionList: <any>[]
+    collectionList: [] as any
   },
   reducers: {//reducer写在下面
     initCollectionList: state => {
