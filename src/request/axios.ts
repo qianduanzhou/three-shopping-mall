@@ -1,5 +1,5 @@
 import axios from 'axios';
-// import store from '@/store/index';
+import store from "store/index";
 
 let { NORMALURL: normalUrl, MODE } = process.env
 
@@ -11,16 +11,16 @@ const instance = axios.create({
 
 // request拦截器
 instance.interceptors.request.use((config: any) => {
-    // let token = store.state.token
-    // if(token) {
-    //     if(config.params) {
-    //         config.params.token = token
-    //     } else {
-    //         config.params = {
-    //             token
-    //         }
-    //     }
-    // }
+    let token = store.getState()?.user?.token
+    if(token) {
+        if(config.params) {
+            config.params.token = token
+        } else {
+            config.params = {
+                token
+            }
+        }
+    }
     return config
 }, (err: any) => {
     Promise.reject(err)
@@ -39,7 +39,7 @@ instance.interceptors.response.use(
         return result
     },
     (error: any) => {
-        console.log('err' + error) // for debug
+        console.log('err: ' + error) // for debug
         return Promise.reject(error)
     }
 )

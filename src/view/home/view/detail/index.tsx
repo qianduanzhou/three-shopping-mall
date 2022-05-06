@@ -4,7 +4,7 @@ import Loading from 'components/loading';
 import styles from './index.module.scss';
 import { useState, useEffect, Suspense } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { addCollection, removeCollection, selectCollectionList } from 'app/shop'
+import { addCollection, removeCollection, selectCollectionList } from 'store/shop'
 import { Canvas, useThree, /*useFrame, useLoader*/ } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
 

@@ -5,7 +5,7 @@ import TopNav from 'components/topNav';//顶部导航栏
 import { connect } from 'react-redux';
 import {
   initCollectionList
-} from 'app/shop'
+} from 'store/shop'
 import { Layout } from "antd";
 const { Header, Footer, Content } = Layout;
 class Home extends Component<any, any> {

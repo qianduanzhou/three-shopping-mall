@@ -28,7 +28,7 @@
       "utils/*": ["src/utils/*"],
       "assets/*": ["src/assets/*"],
       "request/*": ["src/request/*"],
-      "app/*": ["src/app/*"]
+      "store/*": ["src/store/*"]
     }
   },
   "include": [

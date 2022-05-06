@@ -320,7 +320,7 @@ module.exports = function (webpackEnv) {
         'static': resolvePath('../src/static'),
         'assets': resolvePath('../src/assets'),
         'request': resolvePath('../src/request'),
-        'app': resolvePath('../src/app'),
+        'store': resolvePath('../src/store'),
         // Allows for better profiling with ReactDevTools
         ...(isEnvProductionProfile && {
           'react-dom$': 'react-dom/profiling',
