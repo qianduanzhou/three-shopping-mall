@@ -73,7 +73,7 @@ export default function TopNav() {
 
 	useEffect(() => {
 		handleLocation();
-	}, [pathname])
+	}, [pathname])// eslint-disable-line react-hooks/exhaustive-deps
 	return (
 		<div className={styles.container}>
 			<div className={styles.left}>

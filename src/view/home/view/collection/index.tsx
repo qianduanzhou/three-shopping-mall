@@ -1,5 +1,5 @@
 import styles from './index.module.scss';
-import { selectCollectionList } from 'app/shop';
+import { selectCollectionList } from 'store/shop';
 import { useSelector } from 'react-redux';
 import ShopList from 'components/shopList';
 import { useEffect, useState } from 'react';
