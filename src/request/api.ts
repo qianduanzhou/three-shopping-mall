@@ -6,13 +6,9 @@ interface ApiList {
     }
 }
 
-const {
-    REACT_APP_NORMALURL: normalUrl,
-} = process.env
-
 let apiList: ApiList = {
     'getList': {
-        url: normalUrl + '/list/get',
+        url: '/list/get',
         method: 'get',
     }
 }

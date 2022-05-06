@@ -99,6 +99,7 @@
   },
   "devDependencies": {
     "dotenv-cli": "^5.1.0",
+    "http-proxy-middleware": "^2.0.6",
     "node-sass": "^7.0.1",
     "sass-loader": "^12.6.0"
   },

@@ -46,7 +46,7 @@ export default function Detail() {
       setDetail(res)
       checkCollectionion(res)
     } catch (error) {
-      console.log('error:', error)
+      console.log('error: ', error)
     }
   }
   function checkCollectionion(detail: shopDetail) {//判断是否已收藏

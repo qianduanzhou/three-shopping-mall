@@ -1,9 +1,8 @@
 import axios from 'axios';
 import store from "store/index";
 
-let { NORMALURL: normalUrl, MODE } = process.env
-
-let baseURL = MODE === 'dev' ? '/local' : String(normalUrl)
+let { NORMALURL: normalUrl, NODE_ENV } = process.env;
+let baseURL = NODE_ENV === 'development' ? '/normalUrl' : String(normalUrl);
 const instance = axios.create({
     baseURL,//基础url
     timeout: 30000,//请求超时时间

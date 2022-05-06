@@ -9,14 +9,7 @@ import Counter from 'view/counter';
 import Detail from 'view/home/view/detail';
 import NotFound from 'view/notFound';
 
-import request from 'request/index';
 function App() {
-	request({name: 'getList', data: {
-		page: 1,
-		limit: 10
-	}}).then(res => {
-		console.log('res', res)
-	})
 	return (
 		<div className="App">
 			<Routes>

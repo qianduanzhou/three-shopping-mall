@@ -15,9 +15,8 @@ function List() {
 		try {
 			let res: any = await request('shopList');
 			setList(res.records);
-			console.log('getList', res.records)
 		} catch (error) {
-			console.log('[error]:', error);
+			console.log('[error]: ', error);
 		}
 	}
 
@@ -26,7 +25,7 @@ function List() {
 		  let res: any = await shopApi.searchShopList({name: e});
 		  setList(res);
 		} catch (error) {
-		  console.log('[error]:', error);
+		  console.log('[error]: ', error);
 		}
 	  }
 	return (
