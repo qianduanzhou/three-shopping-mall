@@ -35,12 +35,15 @@ module.exports = function (proxy, allowedHost) {
     // really know what you're doing with a special environment variable.
     // Note: ["localhost", ".localhost"] will support subdomains - but we might
     // want to allow setting the allowedHosts manually for more complex setups
+    hot: false,
     allowedHosts: disableFirewall ? 'all' : [allowedHost],
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': '*',
       'Access-Control-Allow-Headers': '*',
     },
+    historyApiFallback: true,
+    liveReload: false,
     // Enable gzip compression of generated files.
     compress: true,
     static: {
@@ -61,13 +64,7 @@ module.exports = function (proxy, allowedHost) {
       directory: paths.appPublic,
       publicPath: [paths.publicUrlOrPath],
       // By default files from `contentBase` will not trigger a page reload.
-      watch: {
-        // Reportedly, this avoids CPU overload on some systems.
-        // https://github.com/facebook/create-react-app/issues/293
-        // src/node_modules is not ignored to support absolute imports
-        // https://github.com/facebook/create-react-app/issues/1065
-        ignored: ignoredFiles(paths.appSrc),
-      },
+      watch: false
     },
     client: {
       webSocketURL: {
@@ -93,12 +90,6 @@ module.exports = function (proxy, allowedHost) {
 
     https: getHttpsConfig(),
     host,
-    historyApiFallback: {
-      // Paths with dots should still use the history fallback.
-      // See https://github.com/facebook/create-react-app/issues/387.
-      disableDotRule: true,
-      index: paths.publicUrlOrPath,
-    },
     // `proxy` is run between `before` and `after` `webpack-dev-server` hooks
     proxy,
     onBeforeSetupMiddleware(devServer) {

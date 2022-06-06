@@ -89,6 +89,9 @@ function resolvePath(filePath) {
 }
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
+const {
+  name
+} = path.resolve(__dirname, '/package');
 module.exports = function (webpackEnv) {
   const isEnvDevelopment = webpackEnv === 'development';
   const isEnvProduction = webpackEnv === 'production';
@@ -221,6 +224,10 @@ module.exports = function (webpackEnv) {
       // We inferred the "public path" (such as / or /my-project) from homepage.
       publicPath: paths.publicUrlOrPath,
       // Point sourcemap entries to original disk location (format as URL on Windows)
+      library: `${name}-[name]`,
+      libraryTarget: 'umd',
+      chunkLoadingGlobal: `webpackJsonp_${name}`,
+      globalObject: 'window',
       devtoolModuleFilenameTemplate: isEnvProduction
         ? info =>
             path

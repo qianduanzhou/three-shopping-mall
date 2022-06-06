@@ -72,7 +72,9 @@ export default function Detail() {
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   function Model() {//模型
-    let glft = useGLTF(`/models/${detail.type}/${detail.fileName}.glb`, true);
+    let path = '';
+    if(window.__POWERED_BY_QIANKUN__) path = '//localhost:4000';
+    let glft = useGLTF(`${path}/models/${detail.type}/${detail.fileName}.glb`, true);
     return <primitive object={glft.scene} position={detail.modelPosition} />
   }
 

@@ -69,3 +69,7 @@ declare module '*.module.sass' {
   const classes: { readonly [key: string]: string };
   export default classes;
 }
+
+declare interface Window {
+  __POWERED_BY_QIANKUN__: boolean
+}
